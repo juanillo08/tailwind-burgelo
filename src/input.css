@@ -1,0 +1,405 @@
+    @import "tailwindcss";
+
+    @theme {
+        --color-primary: #ffc139;
+        --color-dark: #2b2b2b;
+    }
+
+    /* HEADER */
+    .header {
+        @apply  bg-white shadow-md fixed w-full top-0 left-0 p-4.5 z-9999;
+    }
+    .container {
+        @apply lg:max-w-332 lg:mx-auto;
+    }
+    .header__wrapper{
+        @apply  flex items-center justify-between 
+                    md:flex-col md:max-w-full
+    }
+    .header__wrapper .branding {
+        @apply md:max-w-full md:flex md:flex-row md:justify-between 
+            md:items-center md:w-full
+            lg:pb-4
+    }
+    .header__wrapper .branding h3{
+        @apply transition-all ease-in-out duration-350;
+       }
+     .header__wrapper .branding img{
+        @apply w-38 md:w-50 lg:w-40 lg:translate-x-10;
+        }
+
+    .header__nav {
+        @apply -right-full transition-all ease-in-out duration-500 bg-dark absolute text-white w-full h-screen top-23.5
+        md:right-0 md:relative md:bg-white md:text-black md:h-max md:top-0 md:max-w-full;
+    }
+    .header__nav.open {
+        @apply right-0;
+    }
+    .header__nav ul {
+        @apply flex flex-col items-center text-center h-full pt-32 gap-10 max-w-full  md:flex-row md:justify-center md:pt-0  lg:gap-6;
+    }
+    .header__nav ul li {
+        @apply md:flex md:items-center;
+    }
+    .header__nav ul li:nth-child(2) {
+        @apply lg:hidden;
+    }
+    .header__nav ul li a {
+        @apply transition-all ease-in-out duration-150 md:font-light md:text-sm md:tracking-[2px]
+                lg:font-normal lg:text-[0.8rem] lg:tracking-[1px];
+    }
+    .header__nav ul li a:hover {
+        @apply lg:text-primary;
+    }
+    .header__nav ul li a i{
+        @apply transition-all ease-in-out duration-150;
+    }
+    .header__nav ul li:first-child:hover a i{
+        @apply rotate-180;
+    }
+    .header__nav ul li:first-child:hover .home__menu{
+        @apply lg:block;
+    }
+    .header__nav ul li:first-child:hover .home__menu:hover {
+        @apply lg:block;
+    }
+    .header__wrapper .branding h3 {
+        @apply hidden items-center gap-6 text-sm font-[350] font-["Oswald"] 
+                md:flex
+                lg:font-medium lg:text-xl lg:tracking-[1px];
+    }
+    .header__wrapper .branding h3 i {
+        @apply text-primary text-2xl;
+    }
+    .header__wrapper .branding h3:first-child:hover {
+        @apply lg:text-primary lg:cursor-pointer;
+    }
+
+    /* Burgir Button */
+    .burgir{
+        @apply transition-all ease-in-out duration-500 bg-primary p-[0.6rem] rounded-lg flex flex-col justify-center gap-1.5 max-h-max cursor-pointer md:hidden;
+    }
+    .burgir span {
+        @apply w-6 h-[0.2rem] bg-white block transition-all ease-in-out duration-500;
+    }
+
+    .burgir.open{
+         @apply bg-transparent;
+    }
+     .burgir.open span {
+            @apply bg-black w-4.5;
+        }
+    .burgir.open span:first-child {
+            @apply rotate-225 translate-y-2.5;
+        }
+    .burgir.open span:nth-child(2) {
+            @apply opacity-0;
+        }
+    .burgir.open span:last-child {
+            @apply -rotate-225 -translate-y-2.25;
+        }
+  
+
+
+    .home__menu {
+        @apply hidden z-999 fixed top-28 left-[50%] translate-x-[-50%] bg-white w-332 py-8 shadow-md;
+    }
+    .home__menu .items{
+        @apply flex flex-wrap justify-center gap-8;
+    }
+    .home__menu .items img {
+        @apply w-102.5 transition-all ease-in-out duration-350;
+    }
+    .home__menu .items img:hover {
+        @apply scale-[105%] shadow-lg cursor-pointer;
+    }
+    .home__menu .pop__promos {
+        @apply grid grid-cols-2 w-full px-4 gap-8;
+    }
+    .home__menu .pop__promos .pop__promos__item {
+        @apply bg-primary  flex items-center justify-center gap-4 h-32;
+    }
+    .home__menu .pop__promos .pop__promos__item .promo__text{
+        @apply text-white;
+    }
+    #promos__item__bg {
+        @apply bg-[#333333];
+    }
+    .home__menu .pop__promos .pop__promos__item a {
+        @apply text-base font-medium tracking-[2px] font-[Segoe_UI] text-white px-12 py-4 rounded-full transition-all ease-in-out duration-350;
+    }
+    .home__menu .pop__promos .pop__promos__item a:hover {
+        @apply bg-white text-primary;
+    }
+
+   /*HOME BANNER*/
+
+    .banner{
+        @apply pt-23.5 text-white max-w-full md:pt-28 lg:pt-36;
+    }
+    .banner .banner__wrapper {
+        @apply bg-[url(/dist/img/banner.png)] bg-cover bg-center bg-no-repeat max-w-[95%] mx-auto h-[70vh] pt-14 pl-2
+                    md:mx-auto md:bg-size-[80rem] md:pt-40 md:h-200 md:pl-12
+                    lg:max-w-full lg:bg-cover lg:h-175 lg:pt-28 lg:pl-34;
+    }
+    .banner .banner__wrapper img{
+        @apply w-72 md:w-80 lg:w-76;
+    }
+     .banner .banner__wrapper .banner__text{
+        @apply  max-w-80 pl-2 md:max-w-max md:translate-x-18 md:-translate-y-14 md:flex md:flex-col md:gap-4 lg:translate-x-19
+     }
+    .banner .banner__wrapper .banner__text h2{
+        @apply text-5xl font-[450] tracking-[0.5rem] md:text-6xl md:tracking-[0.75rem] lg:text-[4rem];
+    }
+     .banner .banner__wrapper .banner__text p{
+        @apply font-[Segoe_UI] mb-6 md:max-w-72;
+     }
+
+    .banner .banner__text a:hover {
+        @apply lg:text-primary lg:bg-white;
+    }
+
+    /* MENU */
+    .menu__summary{
+        @apply  md:-mt-14 lg:mt-0;
+    }
+    .menu__summary .menu__summary__wrapper{
+        @apply md:grid md:grid-cols-3 max-w-[95%] mx-auto lg:max-w-full lg:gap-8;
+    }
+    .menu__summary__card {
+        @apply flex flex-col items-center py-10 justify-center max-w-[95%] mx-auto
+                md:items-start md:justify-start
+                lg:max-w-full;
+    }
+    .menu__summary__card img {    
+        @apply w-90
+        md:w-50
+        lg:w-full;
+    }
+    .menu__summary__card p {
+        @apply text-sm font-[Montserrat] font-light tracking-[1.5px] text-[#333333] leading-7 
+        md:max-w-120 md:mx-auto md:text-sm
+        lg:tracking-[1px] lg:font-[350];
+    }
+    .menu__summary__card:nth-child(2) img {
+        @apply md:w-40 lg:w-75;
+    }
+    .menu__summary__card .card__text {
+        @apply flex flex-col gap-4  
+        md:max-w-160 md:gap-6
+        lg:max-w-full lg:gap-4;                
+    }
+    .menu__summary__card .card__text .price {
+        @apply flex items-end mb-2;
+    }
+    .menu__summary__card .card__text .price h3 {
+        @apply font-[380] tracking-[2px]
+        md:text-xl md:tracking-[3px]
+        lg:text-lg lg:tracking-[2px];
+    }
+    .menu__summary__card .card__text .price h1 {
+        @apply text-[2.5rem] ml-1.5 translate-y-2
+                lg:text-[2.25rem] lg:translate-y-1.5;
+    }
+    .menu__summary__card .card__text .price .yellow, .menu__summary__card .card__text .price h1 {
+        @apply text-primary font-normal
+        md:tracking-[3px];
+    }
+    .menu__summary__card .card__text .price .yellow {
+        @apply md:text-xl;
+    }
+    .menu__summary__card .card__text a {
+        @apply flex w-11 h-11 items-center justify-center text-white text-2xl rounded-full bg-primary transition-all ease-in-out duration-350;
+    }
+    .menu__summary__card .card__text a:hover {
+        @apply lg:bg-black lg:text-primary;
+    }
+    .menu__summary__card .card__text .food-name {
+        @apply flex gap-1
+        md:flex-col md:justify-items-start
+        lg:gap-2;
+    }
+    .menu__summary__card .card__text .food-name h2, .menu__summary__card .card__text .food-name h1 {
+        @apply text-[2rem] font-[375] tracking-[0.25rem] p-0 leading-none
+        md:max-w-54 md:leading-8
+        lg:max-w-full lg:text-[2.2rem];
+    }
+    .menu__summary__card .card__text .food-name h1 {
+        @apply text-[3rem] 
+        md:tracking-[4px] md:leading-16
+        lg:text-[4.2rem];
+    }
+    .menu__summary__card:nth-child(odd) {
+        @apply md:flex-col-reverse;
+    }
+    .menu__summary__card:nth-child(2) .card__text .food-name{
+        @apply lg:flex-row lg:gap-1.5;
+    }
+    .menu__summary__card:nth-child(2) .card__text, .menu__summary__card:last-child .card__text {
+        @apply lg:pl-12;
+    }
+    .promos .offer{
+        @apply flex flex-col text-center;
+    }
+    .promos .offer h1,h2,h3,p{
+        @apply font-normal leading-none;
+    }
+    .promos .offer h3{
+       @apply text-[1.15rem];
+    }
+    .promos .offer h2{
+    @apply tracking-[0.3rem] md:tracking-[0.4rem];
+    }
+    .promos .offer h1{
+     @apply text-[3.5rem] my-2 md:text-[4.25rem] md:my-3;
+    }
+    .promos .offer p{
+    @apply text-[#00000067] font-[Segoe_UI] mt-6 tracking-[0.5px];
+            }
+    .promos .promos__wrapper{
+        @apply  relative flex flex-col gap-2 max-w-[95%] mx-auto lg:flex-row lg:max-w-full;
+    }
+
+    /* MENU */
+
+    .menu__content {
+    @apply py-4 md:max-w-[95%] md:mx-auto lg:max-w-full;
+    }
+    .menu__content .menu__content__item {
+    @apply flex-col items-center gap-8 hidden md:flex-row md:gap-4 lg:justify-items-start;
+    }
+    .menu__content .menu__content__item.active {
+    @apply flex;
+    }
+    .menu__content .menu__item {
+    @apply relative border-gray-200 border-2 max-w-4/5 flex flex-col items-center justify-center py-12 overflow-hidden md:max-w-[45%] md:px-10 lg:max-w-[25%] lg:pt-14 lg:pb-38 lg:px-15;
+    }
+    .menu__content .menu__item a img {
+    @apply w-48 transition-all ease-in-out duration-450;
+    }
+    .menu__content .menu__item .menu__item__text {
+    @apply max-w-4/5 transition-all ease-in-out duration-350 lg:max-w-full lg:absolute lg:left-[50%] lg:translate-x-[-50%] lg:w-[80%] lg:-bottom-14;
+    }
+    .menu__content .menu__item .menu__item__text .name-food {
+    @apply text-lg transition-all ease-in-out duration-350;
+    }
+
+    .menu__content .menu__item .menu__item__text .name-food:hover {
+    @apply lg:text-primary;
+    }
+    .menu__content .menu__item .menu__item__text h3 {
+    @apply text-2xl text-primary my-2;
+    }
+    .menu__content .menu__item .menu__item__text p {
+    @apply text-sm font-light font-[Segoe_UI] text-gray-400 tracking-[0.5px] transition-all ease-in-out duration-350 lg:text-xs lg:translate-y-12;
+    }
+    .menu__content .menu__item .menu__item__text .add-to-cart {
+    @apply flex gap-2 items-center max-w-max bg-primary text-white text-sm font-[Segoe_UI] px-8 py-2 rounded-full mt-2 transition-all ease-in-out duration-350 lg:mt-4 lg:tracking-[2px] lg:px-6 lg:translate-y-12;
+    }
+    .menu__content .menu__item .menu__item__text .add-to-cart:hover {
+    @apply lg:bg-black lg:text-primary;
+    }
+    .menu__content .menu__item:hover img {
+    @apply opacity-50;
+    }
+    .menu__content .menu__item:hover .menu__item__text {
+    @apply lg:bottom-6;
+    }
+    .menu__content .menu__item:hover .menu__item__text p {
+    @apply lg:translate-y-0;
+    }
+    .menu__content .menu__item:hover .menu__item__text .add-to-cart {
+    @apply lg:translate-y-0;
+    }
+    .menu__content .slider__nav__container {
+        @apply hidden mx-auto max-w-max translate-y-4;
+    }
+    .menu__content .slider__nav__container.active {
+        @apply block;
+    }
+    .menu__content .slider__nav__container .tns-nav {
+        @apply flex max-w-max gap-4;
+    }
+    .menu__content .slider__nav__container .tns-nav .tns-nav-buttons span {
+        @apply w-3 h-3 block rounded-full bg-[#e5e5e5] transition-all ease-in-out duration-250;
+    }
+    .menu__content .slider__nav__container .tns-nav .tns-nav-active span {
+        @apply bg-primary;
+    }
+   
+
+    /*  MENU TABS  */
+
+    .menu__tabs ul li {
+    @apply flex flex-col items-center gap-1.5 border-b-2 border-gray-100 py-2 w-24 transition-all ease-in-out duration-500;
+    }
+    .menu__tabs ul li img {
+    @apply w-12;
+    }
+    .menu__tabs ul li span {
+    @apply text-xl tracking-[2px];
+    }
+    .menu__tabs .tab__nav__link {
+    @apply transition-all ease-in-out duration-350;
+    }
+    .menu__tabs .tab__nav__link:hover {
+    @apply text-primary cursor-pointer;
+    }
+    .menu__tabs .tab__nav__link.active {
+    @apply border-b-primary text-primary;
+    }
+    .order .order__step__card {
+    @apply flex flex-col bg-[#f7f6f9] items-center justify-center text-center gap-6 py-9
+           md:text-start
+           lg:items-end lg:justify-start lg:py-0 lg:pb-9 lg:gap-0;
+    }
+    .order .order__step__card img {
+    @apply w-95;
+    }
+    .order .order__step__card:first-child {
+    @apply lg:gap-4;
+    }
+   .order .order__step__card:first-child > img {
+    @apply lg:pr-14 lg:w-105 lg:mt-8;
+    }
+    .order .order__step__card:first-child .info {
+    @apply lg:pl-24;
+    }
+    .order .order__step__card:nth-child(2) .info {
+    @apply lg:pl-22;
+    }
+
+    .order .order__step__card:nth-child(2) .title__tab {
+    @apply lg:gap-1;
+    }
+    .order .order__step__card:nth-child(3) .info {
+    @apply lg:pl-18;
+    }
+    .order .info {
+    @apply flex flex-col items-center justify-center tracking-[1px] gap-4 md:items-start md:px-3 md:gap-2;
+    } 
+    .order .info .title__tab {
+    @apply flex flex-col justify-center items-center gap-2
+         md:flex-row-reverse md:items-start md:gap-4 md:justify-end
+        lg:items-center;
+    }
+    .order .info .title__tab img {
+    @apply w-16 md:w-12 lg:w-14;
+    }
+    .order .info .title__tab h2 {
+    @apply text-2xl font-["Oswald"] tracking-[3px] font-light
+           md:max-w-30 md:text-[1.75rem] md:font-[350]
+           lg:max-w-full lg:font-normal lg:text-[2.2rem];
+    }
+    .order .info p {
+    @apply font-[Montserrat] text-black leading-7 tracking-[1.5px] font-extralight text-sm lg:tracking-[1px];
+    }
+    .order .order__step__card:last-child img {
+        @apply lg:w-90;
+    }
+    .order .order__step__card:nth-child(odd) {
+        @apply lg:mt-2;
+    }
+    .order .order__step__card:nth-child(even) {
+        @apply md:flex-col-reverse;
+    }
